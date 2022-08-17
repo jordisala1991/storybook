@@ -1,14 +1,28 @@
 {
-  "name": "storybook",
-  "private": true,
+  "name": "@jordisala1991/storybook",
   "version": "0.0.0",
   "type": "module",
+  "files": [
+    "dist"
+  ],
+  "exports": {
+    ".": {
+      "import": "./dist/storybook.js",
+      "require": "./dist/storybook.umd.cjs"
+    }
+  },
+  "main": "./dist/storybook.umd.cjs",
+  "module": "./dist/storybook.js",
+  "types": "./dist/storybook.d.ts",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
-    "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "storybook": "TS_NODE_PROJECT=.storybook/tsconfig.json start-storybook -p 6006",
+    "build-storybook": "TS_NODE_PROJECT=.storybook/tsconfig.json build-storybook"
   },
   "dependencies": {
     "react": "^18.2.0",
@@ -28,6 +42,7 @@
     "@vitejs/plugin-react": "^2.0.1",
     "babel-loader": "^8.2.5",
     "typescript": "^4.6.4",
-    "vite": "^3.0.7"
+    "vite": "^3.0.7",
+    "vite-plugin-dts": "^1.4.1"
   }
 }
