@@ -15,7 +15,7 @@
     "noEmit": true,
     "jsx": "react-jsx",
     "paths": {
-      "@storybook/*": ["./lib/*"]
+      "@example/*": ["./lib/*"]
     }
   },
   "include": ["src", "lib", ".storybook"],
