@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { Header } from '../Header';
-import './page.css';
+import classes from './page.module.css';
 
 type User = {
   name: string;
@@ -54,8 +54,9 @@ export const Page: React.FC = () => {
           </a>
           .
         </p>
-        <div className="tip-wrapper">
-          <span className="tip">Tip</span> Adjust the width of the canvas with the{' '}
+        <div className={[classes['tip-wrapper']].join(' ')}>
+          <span className={[classes['tip']].join(' ')}>Tip</span> Adjust the width of the canvas
+          with the{' '}
           <svg width="10" height="10" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg">
             <g fill="none" fillRule="evenodd">
               <path
