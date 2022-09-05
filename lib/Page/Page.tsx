@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { Header } from '../Header';
-import classes from './page.module.css';
+import StyledSection from './StyledSection';
 
 type User = {
   name: string;
@@ -19,7 +19,7 @@ export const Page: React.FC = () => {
         onCreateAccount={() => setUser({ name: 'Jane Doe' })}
       />
 
-      <section>
+      <StyledSection>
         <h2>Pages in Storybook</h2>
         <p>
           We recommend building UIs with a{' '}
@@ -54,9 +54,8 @@ export const Page: React.FC = () => {
           </a>
           .
         </p>
-        <div className={[classes['tip-wrapper']].join(' ')}>
-          <span className={[classes['tip']].join(' ')}>Tip</span> Adjust the width of the canvas
-          with the{' '}
+        <div className="tip-wrapper">
+          <span className="tip">Tip</span> Adjust the width of the canvas with the{' '}
           <svg width="10" height="10" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg">
             <g fill="none" fillRule="evenodd">
               <path
@@ -68,7 +67,7 @@ export const Page: React.FC = () => {
           </svg>
           Viewports addon in the toolbar
         </div>
-      </section>
+      </StyledSection>
     </article>
   );
 };

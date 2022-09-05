@@ -1,19 +1,13 @@
+import { VariantProps } from '@stitches/react';
 import React from 'react';
-import classes from './button.module.css';
 
-interface ButtonProps {
-  /**
-   * Is this the principal call to action on the page?
-   */
-  primary?: boolean;
+import StyledButton from './StyledButton';
+
+interface ButtonProps extends VariantProps<typeof StyledButton> {
   /**
    * What background color to use
    */
   backgroundColor?: string;
-  /**
-   * How large should the button be?
-   */
-  size?: 'small' | 'medium' | 'large';
   /**
    * Button contents
    */
@@ -27,27 +21,11 @@ interface ButtonProps {
 /**
  * Primary UI component for user interaction
  */
-export const Button = ({
-  primary = false,
-  size = 'medium',
-  backgroundColor,
-  label,
-  ...props
-}: ButtonProps) => {
-  const mode = primary ? 'storybook-button--primary' : 'storybook-button--secondary';
+export const Button = ({ backgroundColor, label, ...props }: ButtonProps) => {
   return (
-    <button
-      type="button"
-      className={[
-        classes['storybook-button'],
-        classes[`storybook-button--${size}`],
-        classes[mode],
-      ].join(' ')}
-      style={{ backgroundColor }}
-      {...props}
-    >
+    <StyledButton type="button" style={{ backgroundColor }} {...props}>
       {label}
-    </button>
+    </StyledButton>
   );
 };
 

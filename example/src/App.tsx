@@ -19,7 +19,7 @@ function App() {
           rel="noopener noreferrer"
         >
           Learn React
-          <Button label="asda"></Button>
+          <Button label="asda" mode="primary" />
         </a>
       </header>
     </div>

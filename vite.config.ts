@@ -3,12 +3,12 @@ import { resolve } from 'path';
 import react from '@vitejs/plugin-react';
 import dts from 'vite-plugin-dts';
 
-// https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
     react({
       exclude: /\.stories\.tsx?$/,
       include: '**/*.tsx',
+      jsxRuntime: 'classic',
     }),
     dts({
       insertTypesEntry: true,
@@ -21,17 +21,25 @@ export default defineConfig({
     },
   },
   build: {
+    minify: false,
+    sourcemap: true,
     lib: {
-      entry: resolve(__dirname, 'lib/main.ts'),
+      entry: 'lib/main.ts',
+      formats: ['es'],
       name: '@jordisala1991/storybook',
-      fileName: 'storybook',
+      fileName: '[name]',
     },
     rollupOptions: {
-      external: ['react', 'react-dom'],
+      external: ['react', 'react-dom', '@stitches/react'],
+      treeshake: false,
       output: {
+        preserveModules: true,
+        preserveModulesRoot: 'lib',
+        inlineDynamicImports: false,
         globals: {
           react: 'React',
           'react-dom': 'ReactDOM',
+          '@stitches/react': '@stitches/react',
         },
       },
     },
