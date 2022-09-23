@@ -18,6 +18,7 @@
     "build": "vite build",
     "build-storybook": "TS_NODE_PROJECT=.storybook/tsconfig.json build-storybook",
     "build-project": "vite build --config vite.project.config.ts",
+    "coverage": "vitest run --coverage",
     "dev": "vite",
     "lint": "run-p lint:*",
     "lint:eslint": "eslint .storybook lib src vite.config.ts vite.project.config.ts",
@@ -25,7 +26,8 @@
     "lint:tsc": "tsc --pretty false",
     "release": "run-s build release:*",
     "release:publish": "changeset publish",
-    "storybook": "TS_NODE_PROJECT=.storybook/tsconfig.json start-storybook"
+    "storybook": "TS_NODE_PROJECT=.storybook/tsconfig.json start-storybook",
+    "test": "vitest"
   },
   "engines": {
     "node": ">=16",
@@ -47,20 +49,24 @@
     "@storybook/builder-vite": "^0.2",
     "@storybook/react": "^6.5",
     "@storybook/testing-library": "^0.0.13",
+    "@testing-library/react": "^13.4",
     "@types/react": "^18.0",
     "@types/react-dom": "^18.0",
     "@typescript-eslint/eslint-plugin": "^5.38",
     "@typescript-eslint/parser": "^5.38",
     "@vitejs/plugin-react": "^2.1",
+    "@vitest/coverage-c8": "^0.23",
     "babel-loader": "^8.2",
     "chromatic": "^6.9",
     "eslint": "^8.23",
     "eslint-config-prettier": "^8.5",
+    "jsdom": "^20.0",
     "npm-run-all": "^4.1",
     "postcss": "^8.4",
     "prettier": "^2.7",
     "typescript": "^4.8",
     "vite": "^3.1",
-    "vite-plugin-dts": "^1.5"
+    "vite-plugin-dts": "^1.5",
+    "vitest": "^0.23"
   }
 }

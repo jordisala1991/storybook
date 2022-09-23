@@ -1,3 +1,5 @@
+/// <reference types="vitest" />
+
 import { defineConfig } from 'vite';
 import { resolve } from 'path';
 import react from '@vitejs/plugin-react';
@@ -42,6 +44,15 @@ export default defineConfig({
           '@stitches/react': '@stitches/react'
         }
       }
+    }
+  },
+  test: {
+    globals: true,
+    environment: 'jsdom',
+    coverage: {
+      all: true,
+      include: ['lib/**/*.tsx', 'lib/**/*.ts'],
+      exclude: ['lib/**/*.stories.tsx']
     }
   }
 });
