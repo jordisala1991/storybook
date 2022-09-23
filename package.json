@@ -29,9 +29,6 @@
         "node": ">=16",
         "npm": ">=7"
     },
-    "publishConfig": {
-        "registry": "https://npm.pkg.github.com"
-    },
     "dependencies": {
         "@stitches/react": "^1.2",
         "react": "^18.2",
