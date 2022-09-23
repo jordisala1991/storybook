@@ -1,5 +1,11 @@
 # @jordisala1991/storybook
 
+## 0.0.3
+
+### Patch Changes
+
+- [#3](https://github.com/jordisala1991/storybook/pull/3) [`e897ba5`](https://github.com/jordisala1991/storybook/commit/e897ba5a820485136ec58ae51d323a60c11e1c9e) Thanks [@jordisala1991](https://github.com/jordisala1991)! - Move registry to npmrc
+
 ## 0.0.2
 
 ### Patch Changes
