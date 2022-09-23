@@ -17,6 +17,7 @@ jobs:
             - id: publish
               uses: JS-DevTools/npm-publish@v1
               with:
+                  registry: https://npm.pkg.github.com
                   token: ${{ secrets.GITHUB_TOKEN }}
             - if: steps.publish.outputs.type != 'none'
               uses: actions/create-release@v1

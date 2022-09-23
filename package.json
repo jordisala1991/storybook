@@ -14,9 +14,6 @@
     "module": "./dist/main.js",
     "types": "./dist/main.d.ts",
     "sideEffects": false,
-    "publishConfig": {
-        "registry": "https://npm.pkg.github.com"
-    },
     "scripts": {
         "dev": "vite",
         "build": "tsc && vite build",
