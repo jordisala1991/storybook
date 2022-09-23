@@ -2,7 +2,7 @@ const { mergeConfig } = require("vite");
 const path = require("path");
 
 module.exports = {
-  stories: ["../src/**/*.stories.mdx", "../lib/**/*.stories.@(ts|tsx)"],
+  stories: ["../stories/**/*.stories.mdx", "../lib/**/*.stories.@(ts|tsx)"],
   addons: [
     "@storybook/addon-links",
     "@storybook/addon-essentials",
