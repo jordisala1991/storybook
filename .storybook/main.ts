@@ -1,26 +1,28 @@
-const { mergeConfig } = require("vite");
-const path = require("path");
+/* eslint @typescript-eslint/no-var-requires: 0 */
+
+const { mergeConfig } = require('vite');
+const path = require('path');
 
 module.exports = {
-  stories: ["../stories/**/*.stories.mdx", "../lib/**/*.stories.@(ts|tsx)"],
+  stories: ['../stories/**/*.stories.mdx', '../lib/**/*.stories.@(ts|tsx)'],
   addons: [
-    "@storybook/addon-links",
-    "@storybook/addon-essentials",
-    "@storybook/addon-interactions",
+    '@storybook/addon-links',
+    '@storybook/addon-essentials',
+    '@storybook/addon-interactions'
   ],
-  framework: "@storybook/react",
+  framework: '@storybook/react',
   core: {
-    builder: "@storybook/builder-vite",
-    disableTelemetry: true,
+    builder: '@storybook/builder-vite',
+    disableTelemetry: true
   },
   features: {
-    storyStoreV7: true,
+    storyStoreV7: true
   },
-  async viteFinal(config, {}) {
+  viteFinal(config) {
     return mergeConfig(config, {
       resolve: {
-        alias: { "@example": path.resolve(path.dirname(__dirname), "lib") },
-      },
+        alias: { '@example': path.resolve(path.dirname(__dirname), 'lib') }
+      }
     });
-  },
+  }
 };

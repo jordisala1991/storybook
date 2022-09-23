@@ -1,47 +1,58 @@
-import { defineConfig } from "vite";
-import { resolve } from "path";
-import react from "@vitejs/plugin-react";
-import dts from "vite-plugin-dts";
+/// <reference types="vitest" />
+
+import { defineConfig } from 'vite';
+import { resolve } from 'path';
+import react from '@vitejs/plugin-react';
+import dts from 'vite-plugin-dts';
 
 export default defineConfig({
   plugins: [
     react({
       exclude: /\.stories\.tsx?$/,
-      include: "**/*.tsx",
-      jsxRuntime: "classic",
+      include: '**/*.tsx',
+      jsxRuntime: 'classic'
     }),
     dts({
       insertTypesEntry: true,
-      include: "lib",
-    }),
+      include: 'lib'
+    })
   ],
   resolve: {
     alias: {
-      "@example": resolve(__dirname, "./lib"),
-    },
+      '@example': resolve(__dirname, './lib')
+    }
   },
   build: {
     minify: false,
     sourcemap: true,
     lib: {
-      entry: "lib/main.ts",
-      formats: ["es"],
-      name: "@jordisala1991/storybook",
-      fileName: "[name]",
+      entry: 'lib/main.ts',
+      formats: ['es'],
+      name: '@jordisala1991/storybook',
+      fileName: '[name]'
     },
     rollupOptions: {
-      external: ["react", "react-dom", "@stitches/react"],
+      external: ['react', 'react-dom', '@stitches/react'],
       treeshake: false,
       output: {
         preserveModules: true,
-        preserveModulesRoot: "lib",
+        preserveModulesRoot: 'lib',
         inlineDynamicImports: false,
         globals: {
-          react: "React",
-          "react-dom": "ReactDOM",
-          "@stitches/react": "@stitches/react",
-        },
-      },
-    },
+          'react': 'React',
+          'react-dom': 'ReactDOM',
+          '@stitches/react': '@stitches/react'
+        }
+      }
+    }
   },
+  test: {
+    globals: true,
+    environment: 'jsdom',
+    coverage: {
+      all: true,
+      include: ['lib/**/*.tsx', 'lib/**/*.ts'],
+      exclude: ['lib/**/*.stories.tsx']
+    }
+  }
 });
