@@ -12,11 +12,8 @@ jobs:
             - uses: actions/setup-node@v3
               with:
                   node-version: 18
-            - run: npm install
+            - uses: bahmutov/npm-install@v1
             - uses: changesets/action@master
               with:
                   title: Release
                   publish: npm run release
-              env:
-                  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-                  NPM_TOKEN: ${{ secrets.GITHUB_TOKEN }}
