@@ -27,7 +27,7 @@ const StyledButton = styled("button", {
     mode: {
       primary: {
         color: "white",
-        backgroundColor: "#1ea7fd",
+        backgroundColor: "red",
       },
       secondary: {
         color: "#333",
