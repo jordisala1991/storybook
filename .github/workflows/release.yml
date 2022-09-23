@@ -13,19 +13,10 @@ jobs:
               with:
                   node-version: 18
             - run: npm install
-            - run: npm run build
-            - id: publish
-              uses: JS-DevTools/npm-publish@v1
+            - uses: changesets/action@master
               with:
-                  registry: https://npm.pkg.github.com
-                  token: ${{ secrets.GITHUB_TOKEN }}
-            - if: steps.publish.outputs.type != 'none'
-              uses: actions/create-release@v1
+                  title: Release
+                  publish: npm run release
               env:
                   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-              with:
-                  tag_name: v${{ steps.publish.outputs.version }}
-                  release_name: v${{ steps.publish.outputs.version }}
-                  body: v${{ steps.publish.outputs.version }}
-                  draft: false
-                  prerelease: false
+                  NPM_TOKEN: ${{ secrets.GITHUB_TOKEN }}
