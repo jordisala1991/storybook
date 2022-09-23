@@ -1,6 +1,9 @@
 {
     "$schema": "https://unpkg.com/@changesets/config@2.1.1/schema.json",
-    "changelog": ["@changesets/changelog-github", { "repo": "primer/react" }],
+    "changelog": [
+        "@changesets/changelog-github",
+        { "repo": "jordisala1991/storybook" }
+    ],
     "commit": false,
     "fixed": [],
     "linked": [],
