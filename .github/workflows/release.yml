@@ -19,3 +19,5 @@ jobs:
               with:
                   title: Release
                   publish: npm run release
+              env:
+                  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
