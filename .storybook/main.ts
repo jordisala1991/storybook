@@ -1,5 +1,7 @@
-import { mergeConfig } from 'vite';
-import path from 'path';
+/* eslint @typescript-eslint/no-var-requires: 0 */
+
+const { mergeConfig } = require('vite');
+const path = require('path');
 
 module.exports = {
   stories: ['../stories/**/*.stories.mdx', '../lib/**/*.stories.@(ts|tsx)'],
