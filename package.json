@@ -17,6 +17,7 @@
     "scripts": {
         "build": "run-p build:*",
         "build-storybook": "TS_NODE_PROJECT=.storybook/tsconfig.json build-storybook",
+        "build-project": "vite build --config vite.project.config.ts",
         "build:tsc": "tsc",
         "build:vite": "vite build",
         "dev": "vite",
