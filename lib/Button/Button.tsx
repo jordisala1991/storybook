@@ -1,7 +1,7 @@
-import { VariantProps } from '@stitches/react';
-import React from 'react';
+import { VariantProps } from "@stitches/react";
+import React from "react";
 
-import StyledButton from './StyledButton';
+import StyledButton from "./StyledButton";
 
 interface ButtonProps extends VariantProps<typeof StyledButton> {
   /**

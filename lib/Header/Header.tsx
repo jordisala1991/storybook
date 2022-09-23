@@ -1,7 +1,7 @@
-import React from 'react';
+import React from "react";
 
-import { Button } from '../Button';
-import StyledHeader from './StyledHeader';
+import { Button } from "../Button";
+import StyledHeader from "./StyledHeader";
 
 type User = {
   name: string;
